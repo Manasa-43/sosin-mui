@@ -1,12 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import AboutUs from './components/AboutUs';
+import ForgotPassword from './components/ForgotPassword';
+
+import Login from "./components/Login"
 
 function App() {
   return (
-    <div className="App">
-      This is Sowji's branch
-    
+    <div>
+      {/* <Login /> */}
+    {/* <ForgotPassword /> */}
+    <AboutUs />
+      
     </div>
+      
+  
+    
   );
 }
 
