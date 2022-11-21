@@ -3,7 +3,7 @@ import { TextField, Typography, Button, Box, Grid, Checkbox, FormControl, InputL
 import {  InputAdornment, IconButton, FormControlLabel, OutlinedInput, Dialog,DialogActions } from "@mui/material";
 import { VisibilityOff, Visibility } from "@mui/icons-material";
 import{ Dialogs,DialogTitle} from "@mui/material";
-import logo from '../assests/logo.png';
+// import logo from '../assests/logo.png';
 import Link from '@mui/material/Link';
 import CloseIcon from '@mui/icons-material/Close';
 

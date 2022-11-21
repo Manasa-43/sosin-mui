@@ -8,7 +8,7 @@ import { ThemeProvider } from "@mui/material";
 import { theme } from "./theme";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+// import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
