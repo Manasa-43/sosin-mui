@@ -1,8 +1,30 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
 
-.App-logo {
+.App {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rounded-circle{
+  width: 10%;
+  
+}
+.one{
+  
+    background: linear-gradient(200.78deg, #e36cd9 8.53%, #fe60ae 91.47%);
+    color: #ffffff;
+}
+.two{
+  background: linear-gradient(200.78deg, #9a56ff 8.53%, #d78afd 91.47%);
+    color: #ffffff;
+
+}
+.three{
+  background: linear-gradient(200.78deg, #23bdb8 8.53%, #43e794 91.47%);
+    color: #ffffff;
+}
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +57,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
