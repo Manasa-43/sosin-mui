@@ -1,8 +1,13 @@
+import { Box, Grid } from '@mui/material'
 import React from 'react'
 export default function Courses(){
     return(
-        <div>
-            This is courses page
-        </div>
+       <Grid container>
+          <Grid md={4}>
+              <Box>
+                  
+              </Box>
+              </Grid> 
+       </Grid>
     )
 }

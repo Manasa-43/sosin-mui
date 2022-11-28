@@ -6,9 +6,10 @@ import{ Dialogs,DialogTitle} from "@mui/material";
 // import logo from '../assests/logo.png';
 import Link from '@mui/material/Link';
 import CloseIcon from '@mui/icons-material/Close';
+import logo from "../assets/Sosin Logo.jpeg";
+import { AttachFile } from "@mui/icons-material";
 
-
-function Registeration() {
+function Registration() {
   const [values, setValues] = React.useState({
     amount: '',
     password: '',
@@ -79,8 +80,7 @@ function Registeration() {
 
       <Grid md={4} >
           <Box >
-          {/* <img  src={logo}/> */}
-          {/* <img src= {require("../assests/logo.png")}  sx={{ width: '5%' }} alt=""/> */}
+          <Box component="img" sx={{ height: "2.5rem", width: "2.5rem", borderRadius: "50%" }} alt="Logo" src={logo}></Box>
             <Typography pt={2} sx={{ color: '#ED7633' }} textAlign="center">Sosin</Typography>
              <Typography  sx={{ color: '#ED7633' }} textAlign="center"> Classes</Typography>
             </Box>
@@ -95,7 +95,7 @@ function Registeration() {
             <FormControl margin="normal" size="small" varient="outlined" sx={{ width: '80%' }}>
               <InputLabel htmlFor="outlined-adornment-password" >Password</InputLabel>
               <OutlinedInput id="outlined-adornment-password" type={values.showPassword ? 'text' : 'password'}
-                value={values.password} onChange={handleChange('password')}
+                value={values.password} onChange={handleChange('password')} placeholder="**********"
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -110,7 +110,7 @@ function Registeration() {
             <FormControl margin="normal" size="small" varient="outlined" sx={{ width: '80%' }} >
               <InputLabel htmlFor="outlined-adornment-password"> Confirm Password</InputLabel>
               <OutlinedInput id="outlined-adornment-confirmpassword" type={values.showPassword ? 'text' : 'password'}
-                value={values.Confirm} onChange={handleChange('Conform')}
+                value={values.Confirm} onChange={handleChange('Conform')} placeholder="**********"
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -164,4 +164,4 @@ function Registeration() {
   );
 }
 
-export default Registeration;
+export default Registration;

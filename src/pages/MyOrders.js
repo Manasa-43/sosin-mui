@@ -6,9 +6,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-const rows= [
-    { OrderId:'1423es45tg',PaymentId:12356788, Amount:3456,Created:'sunday',User:'sowji' }
-]
+// const rows= [
+//     { OrderId:'1423es45tg',PaymentId:12356788, Amount:3456,Created:'sunday',User:'sowji' }
+// ]
 
 function MyOrders() {
     return (
@@ -16,16 +16,16 @@ function MyOrders() {
             <Table sx={{ minWidth: 170 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell align="right">#</TableCell>
-                        <TableCell align="right">Order Id</TableCell>
-                        <TableCell align="right">Payment Id</TableCell>
-                        <TableCell align="right">Amount</TableCell>
-                        <TableCell align="right">Created</TableCell>
-                        <TableCell align="right">User</TableCell>
-                        <TableCell align="right"></TableCell>
+                        <TableCell align="col">#</TableCell>
+                        <TableCell align="col">Order Id</TableCell>
+                        <TableCell align="col">Payment Id</TableCell>
+                        <TableCell align="col">Amount</TableCell>
+                        <TableCell align="col">Created</TableCell>
+                        <TableCell align="col">User</TableCell>
+                        <TableCell align="col"></TableCell>
                     </TableRow>
                 </TableHead>
-                <TableBody>
+                {/* <TableBody>
                     {[rows].map((row) => (
                         <TableRow
                             key={row.name}
@@ -41,7 +41,7 @@ function MyOrders() {
                             <TableCell align="right">{row}</TableCell>
                         </TableRow>
                     ))}
-                </TableBody>
+                </TableBody> */}
             </Table>
         </TableContainer>
 
