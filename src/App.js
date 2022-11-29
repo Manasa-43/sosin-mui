@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Courses from "./components/Courses";
 import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
-import Registeration from "./components/Registeration";
+import Registration from "./components/Registration";
 import TermsandConditions from "./components/TermsandConditions";
 import Sidebar from "./components/Sidebar";
 import MyDashboard from "./pages/MyDashboard";
@@ -17,15 +17,15 @@ import MyDoubts from "./pages/MyDoubts";
 import MySavedAddresses from "./pages/MySavedAddresses";
 import MyProfile from "./pages/MyProfile";
 import MyOrders from "./pages/MyOrders";
+import { Box } from "@mui/system";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <Navbar />
-      
+      <Navbar />    
       <Routes>
-      
-        <Route path="/Courses" element={<Courses />}></Route>
+      <Route path = "/App" element={<App />}></Route>
+      <Route path="/Courses" element={<Courses />}></Route>
         <Route path="/About" element={<About />}></Route>
         <Route path="/" element={<MyDashboard />} />
         <Route path="/MyDashboard" element={<MyDashboard />} />
@@ -36,9 +36,10 @@ function App() {
         <Route path="MySavedAddresses" element={<MySavedAddresses />} />
         <Route path="MyProfile" element={<MyProfile />} />
         <Route path="MyOrders" element={<MyOrders />} />
+        
        
       </Routes>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Footer />
     </Router>
     // <div>

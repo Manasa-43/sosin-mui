@@ -217,7 +217,7 @@ export default function Navbar(){
                 page.name === "Current Affairs" ? (
                   <Button
                     key={index}
-                    href={page.url}
+                    to={page.url}
                     onClick={handleCloseNavMenu}
                     sx={{
                       my: 2,
@@ -253,7 +253,7 @@ export default function Navbar(){
                 ) : (
                   <Button
                     key={index}
-                    href={page.url}
+                    to={page.url}
                     // href="./Courses"
                     onClick={handleCloseNavMenu}
                     sx={{
