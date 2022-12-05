@@ -12,10 +12,13 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../assets/Sosin Logo.jpeg";
+// import { Link } from "@mui/material";
+
 
 import Grid from "@mui/material/Grid";
 
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { Link } from "react-router-dom";
 const pages = [
     { name: "About Us", url: "/About" },
     { name: "Courses", url: "/Courses" },
@@ -251,25 +254,41 @@ export default function Navbar(){
                     </Grid>
                   </Button>
                 ) : (
-                  <Button
+                  <Button  sx={{       
+                    my: 2,
+                    display: "block",
+                    color: "rgba(59, 59, 59, 0.98)",
+                    px: "1.5rem",
+                    fontSize: "14px",
+                    fontWeight: "bold",
+                    "&:hover": {
+                      bgcolor: "rgba(237, 119, 51, 0.15)",
+                      color: "black",
+                    },
+                    textDecoration: 'none'
+                  }}>
+                  <Link className='link'
                     key={index}
                     to={page.url}
                     // href="./Courses"
-                    onClick={handleCloseNavMenu}
-                    sx={{
-                      my: 2,
-                      display: "block",
-                      color: "rgba(59, 59, 59, 0.98)",
-                      px: "1.5rem",
-                      fontSize: "14px",
-                      fontWeight: "bold",
-                      "&:hover": {
-                        bgcolor: "rgba(237, 119, 51, 0.15)",
-                        color: "black",
-                      },
-                    }}
+                    onClick={handleCloseNavMenu}                  
+                    // sx={{       
+                    //   my: 2,
+                    //   display: "block",
+                    //   color: "rgba(59, 59, 59, 0.98)",
+                    //   px: "1.5rem",
+                    //   fontSize: "14px",
+                    //   fontWeight: "bold",
+                    //   "&:hover": {
+                    //     bgcolor: "rgba(237, 119, 51, 0.15)",
+                    //     color: "black",
+                    //   },
+                    //   textDecoration: 'none'
+                    // }}
+                   
                   >
                     {page.name}
+                  </Link>
                   </Button>
                 )
               )}
