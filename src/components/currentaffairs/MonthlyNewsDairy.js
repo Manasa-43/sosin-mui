@@ -77,7 +77,7 @@ function createData(name) {
 }
 
 const rows = [
-  createData('Geo politics'),
+  {name:'Geo politics', url:"/Geopolitics"},
   
 
 ].sort((a, b) => (a.calories < b.calories ? -1 : 1));

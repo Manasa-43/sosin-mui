@@ -17,7 +17,7 @@ import Grid from "@mui/material/Grid";
 
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 const pages = [
-    { name: "About Us", url: "/About" },
+    { name: "About Us", url: "/AboutUs" },
     { name: "Courses", url: "/Courses" },
     { name: "Test Series", url: "/TestSeries" },
     { name: "Current Affairs", url: "#" },
@@ -28,9 +28,9 @@ const pages = [
   // const pagesUrl =["./AboutUs","./Courses","./TestSeries","./CurrentAffairs","./Shop","./MyDashboard","Logout"]
   // const settings = [" Daily News Diary", "Monthly News Diary", "Anthro News Diary"];
   const settings = [
-    { name: "Daily News Diary", url: "/" },
-    { name: "Monthly News Diary", url: "/" },
-    { name: "Anthro News Diary", url: "/" },
+    { name: "Daily News Diary", url: "/DailyNewsDairy" },
+    { name: "Monthly News Diary", url: "/MonthlyNewsDairy" },
+    { name: "Anthro News Diary", url: "/AnthroNewsDairy" },
   ];
 export default function Navbar(){
     const [anchorElNav, setAnchorElNav] = React.useState(null);

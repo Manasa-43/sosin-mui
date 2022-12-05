@@ -48,7 +48,7 @@ const MyDashboard = () =>{
           <p>MyDoubts</p>
           </div>
           <div>
-          <Sidebar/>
+          {/* <Sidebar/> */}
         </div>
         </Box>
        

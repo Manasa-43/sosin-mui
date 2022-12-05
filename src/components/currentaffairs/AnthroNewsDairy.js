@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from "react";
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -9,9 +9,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableFooter from '@mui/material/TableFooter';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import { Button, TextField } from '@mui/material';
+import { useState } from 'react';
 import TableCell from '@mui/material/TableCell';
-import { Link } from 'react-router-dom';
 import TableHead from '@mui/material/TableHead';
 import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
@@ -19,14 +18,12 @@ import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
-// import { useHistory } from "react-router-dom";
+
+
 
 function TablePaginationActions(props) {
-  
   const theme = useTheme();
   const { count, page, rowsPerPage, onPageChange } = props;
-  
-  
 
   const handleFirstPageButtonClick = (event) => {
     onPageChange(event, 0);
@@ -43,19 +40,10 @@ function TablePaginationActions(props) {
   const handleLastPageButtonClick = (event) => {
     onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
   };
-  const [open, setOpen] = React.useState(false)
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-
-  };
-  // const history = useHistory()
-
-    return ( 
-    
+  
+  
+     
+  return (
     <Box sx={{ flexShrink: 0, ml: 1}}>
       
       <IconButton
@@ -88,15 +76,8 @@ function createData(name) {
   return { name};
 }
 
-const rows  = [
-  {name:"EKLAVYA SCHOOLS(15-11-2022)", url: "/EklavyaSchools"},
-  {name:'2020 RANKERS', url:"/Rankers"},
-  {name:'TEST', url: "/Test"},
-  {name:'DND 15-11-2022', url:"/Dnd" },
-  {name:'METANE ALERT AND RESPONSE SYSTEM',url:"/Metane"},
-  {name:'DND 12-11-2022', url:"/Dnd"},
-  {name:'Iorem', url:"/Iorem" },
-  {name:'Indian Biological Data Center', url:"/Indian"},
+const rows = [
+  createData('Geo politics'),
   
 
 ].sort((a, b) => (a.calories < b.calories ? -1 : 1));
@@ -117,56 +98,39 @@ export default function CustomPaginationActionsTable() {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-  const [selectedRow, setSelectedRow] = React.useState({});
-  console.log({ selectedRow });
+  const [active, setActive] = useState(false);
+  const handleClick = () => {
+    setActive(!active);
+  };
   return (
-    <TableContainer component={Paper} md={8}>
-      <Table row sx={{textAlign: 'center' }} > <h3>Current Affairs</h3>
-      {/* <TextField 
-          id="filled-search"
-          label="Search field"
-          type="search"
-          variant="filled"
-        /> */}
-      <Table  aria-label="custom pagination table" >
+    <TableContainer component={Paper}>
+        <Table row sx={{textAlign: 'center' }}  > <h3>Current Affairs</h3>
+      <Table aria-label="custom pagination table">
+       
       <TableHead>
-      <TableRow >
+          <TableRow>
             <TableCell   sx={{ bgcolor: '#ED7633', color: '#ffffff',textAlign: 'center' }}>Daily News Dairy</TableCell>
             </TableRow>
-         
             </TableHead>
-            <TableBody >
+            <TableBody  className="tableHover">
           {(rowsPerPage > 0
             ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : rows
-          )
-          
-        .map((rows, index) => (
-           <TableRow 
-            key={index}  key={rows.name}  onClick={(handleClose) => setSelectedRow(rows)} 
-            sx={{ 
-              "&:hover": {
-                bgcolor: "rgba(237, 119, 51, 0.15)",
-                color: "white",
-              },
-            }}
-            >  
-            <Button href={rows.url}>
-             
+          ).map((row) => (
+            
+            <TableRow key={row.name} >
+
               <TableCell component="th" scope="row">
-                {rows.name}
-               
-                </TableCell>
-                </Button>
-              </TableRow>
-              
-          ))
-        }
-        {emptyRows > 0 && (
+                {row.name}
+              </TableCell>
+             
+            </TableRow>
+          ))}
+          {emptyRows > 0 && (
             <TableRow style={{ height: 45 * emptyRows }}>
-            <TableCell colSpan={4} />
-             </TableRow>
-           ) } 
+              <TableCell colSpan={4} />
+            </TableRow>
+          )}
         </TableBody>
         <TableFooter>
           <TableRow>
@@ -189,10 +153,7 @@ export default function CustomPaginationActionsTable() {
           </TableRow>
         </TableFooter>
       </Table>
-      </Table>
+      </Table> 
     </TableContainer>
   );
 }
-
-  
-
