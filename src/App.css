@@ -24,3 +24,14 @@
     color: #ffffff;
 }
 
+.link{
+  text-decoration: none;
+color: inherit
+}
+.link:hover{
+  color: inherit;
+}
+.semibold{
+  font-weight:600;
+}
+
