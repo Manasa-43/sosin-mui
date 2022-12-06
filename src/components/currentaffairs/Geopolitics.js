@@ -2,7 +2,7 @@ import React from "react";
 
 const Geopolitics= () =>{
     return(
-        <div>Geo politics</div>
+        <div><h1>Geo politics</h1></div>
     );
 };
 export default Geopolitics;

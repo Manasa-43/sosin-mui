@@ -18,6 +18,8 @@ import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
+import { TextField } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
 
 
@@ -103,13 +105,28 @@ export default function CustomPaginationActionsTable() {
     setActive(!active);
   };
   return (
-    <TableContainer component={Paper}>
-        <Table row sx={{textAlign: 'center' }}  > <h3>Current Affairs</h3>
-      <Table aria-label="custom pagination table">
-       
-      <TableHead>
-          <TableRow>
-            <TableCell   sx={{ bgcolor: '#ED7633', color: '#ffffff',textAlign: 'center' }}>Daily News Dairy</TableCell>
+    <TableContainer component={Paper} md={8}  >
+     <Box  sx={{textAlign:'center', flexDirection: 'row'}} pt={2} ><h3>Current Affairs</h3>
+     <Box style={{float:'right'}} pb={2}>
+     <TextField id="standard-bare"
+                variant="outlined"
+               label="search"
+                InputProps={{
+                  endAdornment: (
+                    <IconButton>
+                      <SearchIcon />
+                    </IconButton>
+                  ),
+                }}
+              />
+               </Box>
+               </Box>
+    
+               <Table row   sx={{ textAlign: 'center'}}  > 
+        <Table aria-label="custom pagination table"  >
+          <TableHead>
+            <TableRow >
+              <TableCell sx={{ bgcolor: '#ED7633', color: '#ffffff', textAlign: 'center' }}>Daily News Dairy</TableCell>
             </TableRow>
             </TableHead>
             <TableBody  className="tableHover">

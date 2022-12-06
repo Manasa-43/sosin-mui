@@ -18,8 +18,9 @@ import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
-
-
+import { Link } from 'react-router-dom';
+import { TextField } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -40,7 +41,6 @@ function TablePaginationActions(props) {
   const handleLastPageButtonClick = (event) => {
     onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
   };
-  
   
      
   return (
@@ -101,37 +101,68 @@ export default function CustomPaginationActionsTable() {
   const [active, setActive] = useState(false);
   const handleClick = () => {
     setActive(!active);
+
   };
+  const [selectedRow, setSelectedRow] = React.useState({});
+  console.log({ selectedRow });
+  
   return (
-    <TableContainer component={Paper}>
-        <Table row sx={{textAlign: 'center' }}  > <h3>Current Affairs</h3>
-      <Table aria-label="custom pagination table">
-       
-      <TableHead>
-          <TableRow>
-            <TableCell   sx={{ bgcolor: '#ED7633', color: '#ffffff',textAlign: 'center' }}>Daily News Dairy</TableCell>
+    <TableContainer component={Paper} md={8}  >
+     <Box  sx={{textAlign:'center', flexDirection: 'row'}} pt={2} ><h3>Current Affairs</h3>
+     <Box style={{float:'right'}} pb={2}>
+     <TextField id="standard-bare"
+                variant="outlined"
+               label="search"
+                InputProps={{
+                  endAdornment: (
+                    <IconButton>
+                      <SearchIcon />
+                    </IconButton>
+                  ),
+                }}
+              />
+               </Box>
+               </Box>
+    
+               <Table row   sx={{ textAlign: 'center'}}  > 
+        <Table aria-label="custom pagination table"  >
+          <TableHead>
+            <TableRow >
+              <TableCell sx={{ bgcolor: '#ED7633', color: '#ffffff', textAlign: 'center' }}>Daily News Dairy</TableCell>
             </TableRow>
             </TableHead>
-            <TableBody  className="tableHover">
-          {(rowsPerPage > 0
-            ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-            : rows
-          ).map((row) => (
-            
-            <TableRow key={row.name} >
+        <TableBody >
+            {(rowsPerPage > 0
+              ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              : rows
+            )
 
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-             
-            </TableRow>
-          ))}
-          {emptyRows > 0 && (
-            <TableRow style={{ height: 45 * emptyRows }}>
-              <TableCell colSpan={4} />
-            </TableRow>
-          )}
-        </TableBody>
+              .map((rows, index) => (
+                <TableRow component={Link} to={rows.url} style={{ textDecoration: 'none' }}
+                   key={rows.name} onClick={(handleClose) => setSelectedRow(rows)}
+                  sx={{
+                    "&:hover": {
+                      bgcolor: "rgba(237, 119, 51, 0.15)",
+                      color: "black",
+                      
+                    },
+                  }}
+                >
+                  
+                    <TableCell component="th" scope="row" >
+                    {rows.name}
+                    </TableCell>
+                    
+                </TableRow>
+
+              ))
+            }
+            {emptyRows > 0 && (
+              <TableRow style={{ height: 45 * emptyRows }}>
+                <TableCell colSpan={4} />
+              </TableRow>
+            )}
+          </TableBody>
         <TableFooter>
           <TableRow>
             <TablePagination
