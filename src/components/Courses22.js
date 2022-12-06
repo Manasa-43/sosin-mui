@@ -25,27 +25,33 @@ const images = [
     label: "1",
     imgPath:
       "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
+      name: " UPSC Anthropology Coaching: Dec 2022 Foundation Batch"
   },
   {
     label: "2",
+    name: " UPSC Anthropology Coaching: Dec 2022 Foundation Batch",
     imgPath:
       "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60",
   },
   {
     label: "3",
+    name: " UPSC Anthropology Coaching: Dec 2022 Foundation Batch",
     imgPath:
       "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250",
   },
   {
     label: "4",
+    name: " UPSC Anthropology Coaching: Dec 2022 Foundation Batch",
     imgPath:
       "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
   },
+  
+  
 ];
 export default function Courses22() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = images.length;
+  const maxSteps = images.length / 2;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -57,6 +63,124 @@ export default function Courses22() {
 
   const handleStepChange = (step) => {
     setActiveStep(step);
+  };
+
+  const getCarouselContent = () => {
+    let content = [];
+
+    for (let index = 0; index < images.length; index++) {
+      const element = images[index];
+      content.push(
+        <Grid key={images[index].label} container display="flex">
+          {activeStep === index ? (
+            <Grid display="flex" flexDirection="row">
+              <Grid
+                item
+                xs={12}
+                component="img"
+                sx={{
+                  height: 255,
+                  display: "flex",
+                  Width: 400,
+                  overflow: "hidden",
+                  width: "100%",
+                  mr: "2rem",
+                  borderRadius: 3,
+                }}
+                src={images[index].imgPath}
+                alt={images[index].label}
+              ></Grid>
+              <Grid
+                item
+                xs={12}
+                component="img"
+                sx={{
+                  height: 255,
+                  display: "flex",
+                  Width: 400,
+                  overflow: "hidden",
+                  width: "100%",
+                  ml: "2rem",
+                  borderRadius: 3,
+                }}
+                src={images[index + 1].imgPath}
+                alt={images[index + 1].label}
+              ></Grid>
+            </Grid>
+          ) : null}
+        </Grid>
+      );
+    }
+
+    console.log("Lenghth", content.length);
+    return content;
+  };
+
+  const CarouselContent = () => {
+    return images.slice(0, maxSteps).map((item, index) => {
+      return (
+        <Grid key={images[index].label} container display="flex">
+          {activeStep === index ? (
+            <Grid container display="flex" flexDirection="row" columnSpacing={3} rowGap={3} >
+              <Grid item xs={12} sm={6}>
+                <Card  >
+                <CardMedia
+                
+                xs={12}
+                component="img"
+                sx={{
+                  height: 255,
+                  display: "flex",
+                  Width: 600,
+                  overflow: "hidden",
+                  width: "100%",
+                  // mr: "2rem",
+                  // borderRadius: 3,
+                }}
+                src={images[index].imgPath}
+                alt={images[index].label}
+              ></CardMedia>
+              <CardContent>
+                <Typography>
+                 {item.name}
+                </Typography>
+              </CardContent>
+                </Card>
+              
+              </Grid>
+              <Grid item  >
+                <Card  xs={12} sm={6} >
+                <CardMedia
+                
+                xs={12}
+                component="img"
+                sx={{
+                  height: 255,
+                  display: "flex",
+                  Width: 600,
+                  overflow: "hidden",
+                  width: "100%",
+                  // ml: "2rem",
+                  // borderRadius: 3,
+                }}
+                src={images[(index + maxSteps) % images.length].imgPath}
+                alt={images[(index + maxSteps) % images.length].label}
+              ></CardMedia>
+              <CardContent>
+                <Typography>
+                 {item.name}
+                </Typography>
+              </CardContent>
+                </Card>
+              
+              </Grid>
+              
+              
+            </Grid>
+          ) : null}
+        </Grid>
+      );
+    });
   };
 
   return (
@@ -128,8 +252,10 @@ export default function Courses22() {
                   fontSize: "0.75rem",
                 }}
               >
-                <Link to="/Shop" className='link'> TAKE THIS COURSE</Link>
-             
+                <Link to="/Shop" className="link">
+                  {" "}
+                  TAKE THIS COURSE
+                </Link>
               </Button>
             </Box>
           </Card>
@@ -163,64 +289,20 @@ export default function Courses22() {
       <Box display="flex" justifyContent="center" sx={{ my: "3rem" }}>
         <Box
           sx={{
-            maxWidth: 800,
+            maxWidth: 1000,
             justifyContent: "space-between",
             alignContent: "center",
           }}
         >
-          <AutoPlaySwipeableViews
+          {/* <AutoPlaySwipeableViews
             axis={theme.direction === "rtl" ? "x-reverse" : "x"}
             index={activeStep}
             onChangeIndex={handleStepChange}
             enableMouseEvents
-          >
-            {(() => {
-              for (let index = 0; index < images.length; index++) {
-                const element = images[index];
-                return (
-                  <Grid key={images[index].label} container display="flex">
-                    {activeStep === index ? (
-                      <Grid display="flex" flexDirection="row">
-                        <Grid
-                          item
-                          xs={12}
-                          component="img"
-                          sx={{
-                            height: 255,
-                            display: "flex",
-                            Width: 400,
-                            overflow: "hidden",
-                            width: "100%",
-                            mr: "2rem",
-                            borderRadius: 3,
-                          }}
-                          src={images[index].imgPath}
-                          alt={images[index].label}
-                        ></Grid>
-                        <Grid
-                          item
-                          xs={12}
-                          component="img"
-                          sx={{
-                            height: 255,
-                            display: "flex",
-                            Width: 400,
-                            overflow: "hidden",
-                            width: "100%",
-                            ml: "2rem",
-                            borderRadius: 3,
-                          }}
-                          src={images[index + 1].imgPath}
-                          alt={images[index + 1].label}
-                        ></Grid>
-                      </Grid>
-                    ) : null}
-                  </Grid>
-                );
-              }
-            })()}
-            </AutoPlaySwipeableViews>
-          <Paper
+          > */}
+          <CarouselContent />
+          {/* </AutoPlaySwipeableViews> */}
+          {/* <Paper
             square
             elevation={0}
             sx={{
@@ -232,12 +314,10 @@ export default function Courses22() {
               bgcolor: "background.default",
             }}
           >
-         
             <Typography>{images[0].label}</Typography>
-          </Paper>
+          </Paper> */}
 
-
-            {/* {images.map((step, index) => (
+          {/* {images.map((step, index) => (
               <Grid key={step.label} container display="flex">
                 {activeStep === index ? (
                   <Grid display="flex" flexDirection="row">
@@ -277,7 +357,7 @@ export default function Courses22() {
                 ) : null}
               </Grid>
             ))}  */}
-          
+
           {/* <AutoPlaySwipeableViews
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={activeStep}
