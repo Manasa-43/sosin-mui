@@ -20,7 +20,7 @@ import Grid from "@mui/material/Grid";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Link } from "react-router-dom";
 const pages = [
-    { name: "About Us", url: "/AboutUs" },
+    { name: "About Us", url: "/About" },
     { name: "Courses", url: "/Courses" },
     { name: "Test Series", url: "/TestSeries" },
     { name: "Current Affairs", url: "#" },

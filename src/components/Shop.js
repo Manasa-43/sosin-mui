@@ -77,7 +77,7 @@ export default function Shop() {
   console.log(shopArray.length);
   return (
     <Box>
-    <Box sx={{ px: "4rem", pt: "3rem", mb: "6rem" }}>
+    <Box sx={{ pt: "3rem", mb: "6rem" }}>
       <Typography
         sx={{
           fontWeight: "bold",
@@ -104,9 +104,9 @@ export default function Shop() {
               xs={12}
               sm={6}
               md={3}
-              sx={{ textAlign: "center" }}
+              sx={{ textAlign: "center"}}
             >
-              <Grid sx={{ textAlign: "center" }}>
+              <Grid  sx={{ textAlign: "center" }}  >
                 <Box
                   component="img"
                   src={item.img}
@@ -191,7 +191,7 @@ export default function Shop() {
       </Grid>
     </Box>
 
-    <Box sx={{ px: "4rem", pt: "3rem", mb: "6rem" }}>
+    <Box sx={{  pt: "3rem", mb: "6rem" }}>
       <Typography
         sx={{
           fontWeight: "bold",

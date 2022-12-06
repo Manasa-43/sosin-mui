@@ -4,7 +4,7 @@ import Paper from "@mui/material/Paper";
 import { Box } from "@mui/system";
 import Sidebar from "../components/Sidebar"
 import "../App.css";
-import Sidebar from "../components/Sidebar";
+// import Sidebar from "../components/Sidebar";
 
 const MyDashboard = () =>{
     const [spacing, setSpacing] = React.useState(2);

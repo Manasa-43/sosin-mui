@@ -112,7 +112,7 @@ export default function Footer(){
               © Erasmus Training Services Pvt. Ltd.2022
             </Typography>
           </Grid>
-          <Grid container md={6} sx={{ mt: "1rem" }}>
+          <Grid container md={6} sx={{ mt: "1rem",px:'0rem',mx:'0rem' }}>
             {/* <Grid container  sx={{border:1}}> */}
 
             <List
@@ -150,9 +150,10 @@ export default function Footer(){
                 alignContent: "center",
                 color: "rgba(59, 59, 59, 0.98)",
                 fontSize: "14px",
+                px:'0rem'
               }}
             >
-              <ListItem xs={12}>
+              <ListItem xs={12} sx={{pl:'0rem'}}>
                 <Link
                   href="#"
                   underline="none"
@@ -162,13 +163,14 @@ export default function Footer(){
                     borderRadius: "50%",
                     py: "0.75rem",
                     px: "1rem",
-                    "&:hover": { backgroundColor: "#ED7633", color: "#fff" },
+                   
+                    "&:hover": { backgroundColor: "#ED7633", color: "#fff",},
                   }}
                 >
                   <FontAwesomeIcon icon={faFacebook} />
                 </Link>
               </ListItem>
-              <ListItem xs={12}>
+              <ListItem xs={12} sx={{pl:'0rem'}}>
                 <Link
                   href="#"
                   underline="none"
@@ -184,7 +186,7 @@ export default function Footer(){
                   <FontAwesomeIcon icon={faTwitter} />
                 </Link>
               </ListItem>
-              <ListItem xs={12}>
+              <ListItem xs={12} sx={{pl:'0rem'}}>
                 <Link
                   href="#"
                   underline="none"
@@ -200,7 +202,7 @@ export default function Footer(){
                   <FontAwesomeIcon icon={faYoutube} />
                 </Link>
               </ListItem>
-              <ListItem xs={12}>
+              <ListItem xs={12} sx={{pl:'0rem'}}>
                 <Link
                   href="#"
                   underline="none"

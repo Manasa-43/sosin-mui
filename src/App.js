@@ -61,16 +61,16 @@ function App() {
       <Route path="MySavedAddresses" element={<MySavedAddresses />} />
       <Route path="MyProfile" element={<MyProfile />} />
       <Route path="MyOrders" element={<MyOrders />} />
-      <Route path="/MyDashboard" element={<MyDashboard />} />
+      {/* <Route path="/MyDashboard" element={<MyDashboard />} /> */}
         <Route path="/Courses" element={<Courses />}></Route>
         <Route path="/About" element={<About />}></Route>
-         <Route path="/MyBatch" element={<MyBatch />} />
-        <Route path="/MyAssignment" element={<MyAssignment />} />
-        <Route path="/MyDoubts" element={<MyDoubts />} />
-        <Route path="/MyTestSeries" element={<MyTestSeries />} />
-        <Route path="MySavedAddresses" element={<MySavedAddresses />} />
-        <Route path="MyProfile" element={<MyProfile />} />
-        <Route path="MyOrders" element={<MyOrders />} />
+         {/* <Route path="/MyBatch" element={<MyBatch />} /> */}
+        {/* <Route path="/MyAssignment" element={<MyAssignment />} /> */}
+        {/* <Route path="/MyDoubts" element={<MyDoubts />} /> */}
+        {/* <Route path="/MyTestSeries" element={<MyTestSeries />} /> */}
+        {/* <Route path="MySavedAddresses" element={<MySavedAddresses />} /> */}
+        {/* <Route path="MyProfile" element={<MyProfile />} /> */}
+        {/* <Route path="MyOrders" element={<MyOrders />} /> */}
         <Route path="/DailyNewsDairy" element={<DailyNewsDairy/>}/>
        <Route path="/EklavyaSchools" element={<EklavyaSchools/>}/>
        <Route path="/MonthlyNewsDairy" element={<MonthlyNewsDairy/>}/>
@@ -84,6 +84,7 @@ function App() {
        <Route path="/Geopolitics" element={<Geopolitics/>}/>      
       </Routes>
       {/* <Sidebar /> */}
+      <Footer/>
 </Router>  
   )}
 

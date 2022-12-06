@@ -66,7 +66,13 @@ export default function TestSeries(){
     return(
         <Box >
             <Grid container px='4rem' py={4}  >
-            <Grid item md={3} component='img' src={Carouselimg1}>
+            <Grid item md={3} component='img'sx={{
+                  height: 255,
+                  display: 'block',
+                //   maxWidth: 400,
+                  overflow: 'hidden',
+                  width: '100%',
+                }} src={Carouselimg1}>
 
             </Grid>
             <Grid item md={9} >
