@@ -48,7 +48,8 @@ const images = [
   
   
 ];
-export default function Courses22() {
+
+ function Courses22() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length / 2;
@@ -65,58 +66,60 @@ export default function Courses22() {
     setActiveStep(step);
   };
 
-  const getCarouselContent = () => {
-    let content = [];
+  
 
-    for (let index = 0; index < images.length; index++) {
-      const element = images[index];
-      content.push(
-        <Grid key={images[index].label} container display="flex">
-          {activeStep === index ? (
-            <Grid display="flex" flexDirection="row">
-              <Grid
-                item
-                xs={12}
-                component="img"
-                sx={{
-                  height: 255,
-                  display: "flex",
-                  Width: 400,
-                  overflow: "hidden",
-                  width: "100%",
-                  mr: "2rem",
-                  borderRadius: 3,
-                }}
-                src={images[index].imgPath}
-                alt={images[index].label}
-              ></Grid>
-              <Grid
-                item
-                xs={12}
-                component="img"
-                sx={{
-                  height: 255,
-                  display: "flex",
-                  Width: 400,
-                  overflow: "hidden",
-                  width: "100%",
-                  ml: "2rem",
-                  borderRadius: 3,
-                }}
-                src={images[index + 1].imgPath}
-                alt={images[index + 1].label}
-              ></Grid>
-            </Grid>
-          ) : null}
-        </Grid>
-      );
-    }
+  // const getCarouselContent = () => {
+  //   let content = [];
 
-    console.log("Lenghth", content.length);
-    return content;
-  };
+  //   for (let index = 0; index < images.length; index++) {
+  //     const element = images[index];
+  //     content.push(
+  //       <Grid key={images[index].label} container display="flex">
+  //         {activeStep === index ? (
+  //           <Grid display="flex" flexDirection="row">
+  //             <Grid
+  //               item
+  //               xs={12}
+  //               component="img"
+  //               sx={{
+  //                 height: 255,
+  //                 display: "flex",
+  //                 Width: 400,
+  //                 overflow: "hidden",
+  //                 width: "100%",
+  //                 mr: "2rem",
+  //                 borderRadius: 3,
+  //               }}
+  //               src={images[index].imgPath}
+  //               alt={images[index].label}
+  //             ></Grid>
+  //             <Grid
+  //               item
+  //               xs={12}
+  //               component="img"
+  //               sx={{
+  //                 height: 255,
+  //                 display: "flex",
+  //                 Width: 400,
+  //                 overflow: "hidden",
+  //                 width: "100%",
+  //                 ml: "2rem",
+  //                 borderRadius: 3,
+  //               }}
+  //               src={images[index + 1].imgPath}
+  //               alt={images[index + 1].label}
+  //             ></Grid>
+  //           </Grid>
+  //         ) : null}
+  //       </Grid>
+  //     );
+  //   }
 
-  const CarouselContent = () => {
+  //   console.log("Length", content.length);
+  //   return content;
+  // };
+
+  function CarouselContent () {
     return images.slice(0, maxSteps).map((item, index) => {
       return (
         <Grid key={images[index].label} container display="flex">
@@ -269,7 +272,7 @@ export default function Courses22() {
         <Box sx={{ fontSize: "2rem", fontWeight: 500, my: "2rem" }}>
           Related Courses
         </Box>
-        <Box>
+        <Grid display='flex' justifyContent='center' >
           <Button
             variant="contained"
             sx={{
@@ -280,11 +283,28 @@ export default function Courses22() {
               borderRadius: 2,
               fontWeight: "bold",
               fontSize: "1rem",
+              mx:'2rem'
             }}
+           
           >
             Anthropology
           </Button>
-        </Box>
+          <Button
+            variant="contained"
+            sx={{
+              bgcolor: "#ED7633",
+              "&:hover": { bgcolor: "#ED7633" },
+              py: "0.5rem",
+              px: "2.5rem",
+              borderRadius: 2,
+              fontWeight: "bold",
+              fontSize: "1rem",
+              mx:'2rem'
+            }}
+          >
+           General Studies
+          </Button>
+        </Grid>
       </Grid>
       <Box display="flex" justifyContent="center" sx={{ my: "3rem" }}>
         <Box
@@ -462,3 +482,4 @@ export default function Courses22() {
     </Box>
   );
 }
+export {Courses22}

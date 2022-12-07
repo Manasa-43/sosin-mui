@@ -134,9 +134,11 @@ export default function Navbar(){
                         // fontWeight: "bold",
                       }}
                     >
+                      <Link to={page.url} className='link'>
                       <Typography >
                         {page.name}
-                      </Typography>
+                      </Typography></Link>
+                      
                       <KeyboardArrowDownIcon
                         sx={{ pt: "0rem" }}
                         onClick={handleOpenUserMenu}
@@ -145,7 +147,8 @@ export default function Navbar(){
                     </MenuItem>
                   ) : (
                     <MenuItem key={index} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">{page.name}</Typography>
+                      <Link to={page.url} className='link'><Typography textAlign="center">{page.name}</Typography></Link>
+                      
                     </MenuItem>
                   )
                 )}

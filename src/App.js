@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Courses from "./components/Courses";
 import Shop from "./components/Shop"
-import Courses22 from "./components/Courses22";
+import {Courses22} from "./components/Courses22";
 import Courses21 from "./components/Courses21";
 import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
 import Registration from "./components/Registration";

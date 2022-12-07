@@ -42,25 +42,23 @@ export default function Courses() {
 
   console.log(courseArray.length);
   return (
-    <Box sx={{ px: "4rem", pt: "3rem", mb: "6rem", border:1}}>
+    <Box sx={{pt: "3rem", mb: "6rem", px:'2rem'}}>
       <Typography
-        sx={{ fontWeight: "500", fontSize: "2rem", pb: "2rem" }}
+        sx={{ fontWeight: "500", fontSize: "2rem", pb: "2rem", px:'4rem' }}
         variant="h2"
       >
         All Courses
       </Typography>
       <Grid
         container
-        
         rowSpacing={6}
-        columnSpacing={{ xs: 2, sm: 3, md: 4 }}
-        
-        sx={{ pt: "2rem" }}
+        columnSpacing={{ xs: 2, sm: 3, md: 2 }}        
+        sx={{ pt: "2rem" ,alignItems:'center'}}
       >
         {courseArray.length > 0 ? (
           courseArray.map((item, index) => (
-            <Grid item key={index} xs={12} sm={4} md={4} sx={{border:1}} >
-              <Card elevation={3} sx={{ maxWidth: 300, borderRadius: 2 ,border:2, }} >
+            <Grid item display='flex' justifyContent='center' key={index} xs={12} sm={4} md={4}   >
+              <Card elevation={3} sx={{ maxWidth: 300, borderRadius: 2 }} >
                 <Link to={item.path} className='link'>
                   <CardActionArea>
                     <CardMedia
