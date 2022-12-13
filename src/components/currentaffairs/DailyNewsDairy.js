@@ -94,7 +94,7 @@ function createData(name) {
 const rows = [
   { name: "EKLAVYA SCHOOLS(15-11-2022)", url: "/EklavyaSchools" },
   { name: '2020 RANKERS', url: "/Rankers" },
-  { name: 'TEST', url: "/Test" },
+
   { name: 'DND 15-11-2022', url: "/Dnd" },
   { name: 'METANE ALERT AND RESPONSE SYSTEM', url: "/Metane" },
   { name: 'DND 12-11-2022', url: "/Dnd" },
