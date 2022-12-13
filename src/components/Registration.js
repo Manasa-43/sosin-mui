@@ -73,20 +73,21 @@ function Registration() {
 
       <Grid md={8} sx={{ bgcolor: '#ED7633', color: '#ffffff' }} >  
         <Box >
-          <Typography variant="h4" pt={50} pl={2}>Signup with Sosin Classes</Typography>
-          <Typography variant="h5" pl={2}>Home</Typography>
+        
+          <Typography h4 className="fw-bold" pt={50} pl={2}>Signup with Sosin Classes</Typography>
+          <Typography variant="h5"  className="fw-light" pl={2}>Home</Typography>
         </Box>
       </Grid>
 
       <Grid md={4} >
           <Box >
-          <Box component="img" sx={{ height: "2.5rem", width: "2.5rem", borderRadius: "50%" }} alt="Logo" src={logo}></Box>
+          <Box component="img" className="fw-bolder" sx={{ height: "2.5rem", width: "2.5rem", borderRadius: "50%" }} alt="Logo" src={logo}></Box>
             <Typography pt={2} sx={{ color: '#ED7633' }} textAlign="center">Sosin</Typography>
              <Typography  sx={{ color: '#ED7633' }} textAlign="center"> Classes</Typography>
             </Box>
         
         <form>
-         <Typography variant="h5" pt={2} textAlign="center">Create Your Account</Typography>
+         <Typography variant="h5" className="fw-semibold" pt={2} textAlign="center">Create Your Account</Typography>
            <Box display="flex" alignItems="center" justifyContent="center" flexDirection={"column"}  >
             <TextField margin="normal" size="small" type={"email"} id="outlined-textarea" label="Email" placeholder="test@gmail.com" sx={{ width: '80%' }} />
             <TextField margin="normal" size="small" id="outlined-textarea" label="Name" type={"text"} placeholder="eg:john"sx={{ width: '80%' }} />

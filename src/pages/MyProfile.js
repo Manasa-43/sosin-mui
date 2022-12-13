@@ -37,20 +37,20 @@ const MyProfile = () => {
     event.preventDefault();
   };
 
-  
-  
+
+
   return (
     <Grid container  >
 
-      <Box pt={5} pb={5}  alignItems="center" justifyContent="center">
-        <Typography variant="h5" >Profile Info</Typography>
-        <Typography >Edit your details</Typography>
-        <Button sx={{ bgcolor: '#ED7633' }} alignItems="center" variant="contained">Upload picture</Button>
-        <Typography variant="h5" >Password Update</Typography>
-        <Typography pb={3} >Fill to update new password</Typography>
+      <Box pt={5} pb={5} alignItems="center" justifyContent="center">
+        <Typography variant="h5" className="fw-bolder">Profile Info</Typography>
+        <Typography className="semi-bolder" >Edit your details</Typography>
+        <Button sx={{ bgcolor: '#ED7633' }} alignItems="center" className="fw-bolder" variant="contained">Upload picture</Button>
+        <Typography variant="h5" className="semi-bolder" >Password Update</Typography>
+        <Typography pb={3} className="fw-light" >Fill to update new password</Typography>
         <form>
-          <Box  border={1}>
-           
+          <Box border={1}>
+
             <Grid md={12} >
               <FormControl margin="normal" size="small" varient="outlined" >
                 <InputLabel htmlFor="outlined-adornment-password" >Current Password</InputLabel>
@@ -81,30 +81,30 @@ const MyProfile = () => {
                           aria-label="toggle password visibility" onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword} edge="end">
                           {values.showPassword ? <VisibilityOff /> : <Visibility />}
                         </IconButton>
-                      </InputAdornment>            
-                    }
-                    label="Password" />
-                </FormControl>
-                <Box pl={5}>
-                <FormControl margin="normal" size="small" varient="outlined"  >
-                  <InputLabel htmlFor="outlined-adornment-password" >Re-enter Password</InputLabel>
-                  <OutlinedInput id="outlined-adornment-password" type={values.showPassword ? 'text' : 'password'}
-                    value={values.password} onChange={handleChange('password')} placeholder="**********"
-                    endAdornment={
-                      <InputAdornment position="end">
-                        <IconButton
-                          aria-label="toggle password visibility" onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword} edge="end">
-                          {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
                       </InputAdornment>
                     }
                     label="Password" />
                 </FormControl>
+                <Box pl={5}>
+                  <FormControl margin="normal" size="small" varient="outlined"  >
+                    <InputLabel htmlFor="outlined-adornment-password" >Re-enter Password</InputLabel>
+                    <OutlinedInput id="outlined-adornment-password" type={values.showPassword ? 'text' : 'password'}
+                      value={values.password} onChange={handleChange('password')} placeholder="**********"
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility" onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword} edge="end">
+                            {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                          </IconButton>
+                        </InputAdornment>
+                      }
+                      label="Password" />
+                  </FormControl>
                 </Box>
               </Grid>
             </Box>
           </Box>
-          <Button sx={{ bgcolor: '#ED7633' }}  alignItems="center" variant="contained">Update User</Button>
+          <Button sx={{ bgcolor: '#ED7633' }} alignItems="center" variant="contained">Update User</Button>
         </form>
       </Box>
     </Grid>
