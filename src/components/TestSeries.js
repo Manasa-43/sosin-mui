@@ -12,8 +12,6 @@ import Button from "@mui/material/Button";
 import Carouselimg1 from "../assets/Card img.png";
 import Carouselimg2 from "../assets/test-image-1.png";
 import Carouselimg3 from "../assets/test-image-2.png";
-// import Abc from "../components/Courses22"
-// import {CarouselContent} from "../components/Courses22"
 import { useTheme } from "@mui/material/styles";
 import MobileStepper from "@mui/material/MobileStepper";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
@@ -21,7 +19,8 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import { Link } from "react-router-dom";
-
+import Carousel from "./Carousel";
+import Testimonial from "./Testimonials";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const images = [
@@ -46,7 +45,66 @@ const images = [
     imgPath: Carouselimg3,
   },
 ];
-export default function TestSeries() {
+const linkImages = [
+  {
+    id: "1",
+    linkPath: "https://www.youtube.com/embed/fHd_ttfBg5U",
+    title: "Motivational Video free stock video HD",
+  },
+  {
+    id: "2",
+    linkPath: "https://www.youtube.com/embed/fHd_ttfBg5U",
+    title: "Motivational Video free stock video HD",
+  },
+  
+];
+const allCourses = [
+  {
+    name: "Anthropology",
+    imgArr: [
+      {
+        img: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
+        title: "UPSC Anthropology Coaching: Dec 2022 Foundation Batch  1",
+        label: 1,
+      },
+      {
+        img: "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60",
+        title: "UPSC Anthropology Coaching: Dec 2022 Foundation Batch  2",
+        label: 2,
+      },
+      {
+        img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250",
+        title: "UPSC Anthropology Coaching: Dec 2022 Foundation Batch  3",
+        label: 3,
+      },
+      {
+        img: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
+        title: "UPSC General Studies Coaching: Dec 2022 Foundation Batch  4",
+        label: 4,
+      },
+    ],
+  },
+  {
+    name: "General Studies",
+    imgArr: [
+      {
+        img: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
+        title: "UPSC General Studies Coaching: Dec 2022 Foundation Batch 1",
+        label: 1,
+      },
+      {
+        img: "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60",
+        title: "UPSC General Studies Coaching: Dec 2022 Foundation Batch 2",
+        label: 2,
+      },
+    ],
+  },
+];
+
+
+
+ function TestSeries() {
+  const [currentCourse, setCurrentCourse] = React.useState(allCourses[0]);
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
@@ -64,13 +122,11 @@ export default function TestSeries() {
   };
 
   return (
-    
     <Box>
-      
       <Grid container px="4rem" py={4}>
-      {/* <Abc/> */}
-      {/* <CarouselContent /> */}
-     
+        
+        {/* <CarouselContent /> */}
+
         <Grid
           item
           md={3}
@@ -86,19 +142,6 @@ export default function TestSeries() {
         ></Grid>
         <Grid item md={9}>
           <Box sx={{ flexGrow: 1 }}>
-            {/* <Paper
-        square
-        elevation={0}
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          height: 50,
-          pl: 2,
-          bgcolor: 'background.default',
-        }}
-      >
-        <Typography>{images[activeStep].label}</Typography>
-      </Paper> */}
             <AutoPlaySwipeableViews
               axis={theme.direction === "rtl" ? "x-reverse" : "x"}
               index={activeStep}
@@ -160,7 +203,7 @@ export default function TestSeries() {
           </Box>
         </Grid>
       </Grid>
-      <Box>
+      <Box  sx={{ px: "5rem" }}>
         <Typography
           sx={{
             fontWeight: "bold",
@@ -178,47 +221,36 @@ export default function TestSeries() {
           display="flex"
           rowSpacing={6}
           columnSpacing={{ xs: 2, sm: 3, md: 3 }}
-          sx={{ px: "5rem" }}
+          // sx={{ px: "5rem" }}
         >
-          <Grid item xs={12} sm={6} md={6}>
-            <Card>
-              <CardMedia
-                component="iframe"
-                height="360"
-                width="640"
-                src="https://www.youtube.com/embed/fHd_ttfBg5U"
-                title="Motivational Video free stock video HD"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowFullScreen"
-              ></CardMedia>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <Card>
-              <CardMedia
-                component="iframe"
-                height="360"
-                width="640"
-                src="https://www.youtube.com/embed/fHd_ttfBg5U"
-                title="Motivational Video free stock video HD"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowFullScreen"
-              ></CardMedia>
-            </Card>
-          </Grid>
+          {linkImages.map((arr) => (
+            <Grid key ={arr.id} item xs={12} sm={6} md={6}>
+              <Card>
+                <CardMedia
+                  component="iframe"
+                  height="360"
+                  width="640"
+                  src={arr.linkPath}
+                  title={arr.title}
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowFullScreen"
+                ></CardMedia>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
-        <Grid sx={{px:'2rem',my:'4rem'}} align="center">
-          
-            <Card elevation={3} sx={{ maxWidth: 450 }}>
-              <CardMedia
-                component="img"
-                height="300"
-                src={require("../assets/bookStatic-img.jpg")}
-                // sx={{position:'relative'}}
-              ></CardMedia>
-              
-            </Card>
-            <Button variant='contained' sx={{
+        <Grid sx={{ px: "2rem", my: "4rem" }} align="center">
+          <Card elevation={3} sx={{ maxWidth: 450 }}>
+            <CardMedia
+              component="img"
+              height="300"
+              src={require("../assets/bookStatic-img.jpg")}
+              // sx={{position:'relative'}}
+            ></CardMedia>
+          </Card>
+          <Button
+            variant="contained"
+            sx={{
               bgcolor: "#ED7633",
               "&:hover": { bgcolor: "#ED7633" },
               py: "0.5rem",
@@ -226,11 +258,90 @@ export default function TestSeries() {
               borderRadius: 2,
               fontWeight: "bold",
               fontSize: "1rem",
-             
-            }}>Buy Now</Button>
+            }}
+          >
+            Buy Now
+          </Button>
         </Grid>
-        
+        <Grid align="center">     
+          <Typography sx={{ fontSize: "2rem", fontWeight: 500, my: "2rem" }}>
+           Explore Your Courses
+          </Typography>
+        </Grid>
+        <Grid
+              display="flex"
+              justifyContent="center"
+              sx={{ mb: "2rem", mx: "1rem" }}
+            >
+              {allCourses.map((item) => (
+                <Box>
+                  {item.name === currentCourse.name ? (
+                    <Button
+                      onClick={() => setCurrentCourse(item)}
+                      sx={{
+                        bgcolor: "#ED7633",
+                        variant: "contained",
+                        color: "white",
+                        "&:hover": { bgcolor: "#ED7633" },
+                        py: "0.5rem",
+                        px: "1.5rem",
+                        borderRadius: "2rem",
+                        fontWeight: "bold",
+                        fontSize: "0.75rem",
+                        width: "100%",
+                        whiteSpace: "nowrap",
+
+                        // mx:'1rem'
+                      }}
+                    >
+                      {item.name}
+                    </Button>
+                  ) : (
+                    <Button
+                      onClick={() => setCurrentCourse(item)}
+                      sx={{
+                        // bgcolor: "#ED7633",
+                        color: "rgba(59, 59, 59, 0.68)",
+                        // "&:hover": { bgcolor: "#ED7633" },
+                        py: "0.5rem",
+                        px: "1.5rem",
+                        borderRadius: "2rem",
+                        fontWeight: "bold",
+                        fontSize: "0.75rem",
+                        width: "100%",
+                        whiteSpace: "nowrap",
+
+                        // mx:'1rem'
+                      }}
+                    >
+                      {item.name}
+                    </Button>
+                  )}
+                </Box>
+              ))}
+            </Grid>
+        <Carousel data={currentCourse}/>
       </Box>
+      <Grid sx={{backgroundColor:"rgba(237,118,51,.06)",pt:'2rem',mb:'2rem'}}>
+      <Typography
+          sx={{
+            fontWeight: "bold",
+            fontSize: "2rem",
+            py: "2rem",
+            textAlign: "center",
+            color: "rgb(84, 82, 82)",
+            px:'4rem'
+          }}
+          variant="h1"
+        >
+         Two decades of consistent success – Student Testimonials
+        </Typography>
+        {/* <Box sx={{px:'2rem',zIndex:1}}> 
+          <Carousel data={currentCourse} />
+        </Box> */}
+          <Testimonial />
+      </Grid>
     </Box>
   );
 }
+export {TestSeries} ;

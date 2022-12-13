@@ -15,7 +15,7 @@ import Sidebar from "./components/Sidebar";
 import MyDashboard from "./pages/MyDashboard";
 import MyOrders from "./pages/MyOrders";
 import { Box } from "@mui/system";
-import TestSeries from "./components/TestSeries";
+import {TestSeries} from "./components/TestSeries";
 import Login from "./components/Login"
 import MyDoubts from "./pages/MyDoubts";
 import MyBatch from "./pages/MyBatch";
@@ -46,10 +46,6 @@ function App() {
       <Route path="/Courses" element={<Courses />}></Route>
       <Route path="/Courses/Courses22" element={<Courses22 />}></Route>
       <Route path="/Courses/Courses21" element={<Courses21 />}></Route>
-      <Route path="/Courses/Courses20" element={<Courses22 />}></Route>
-      <Route path="/Courses/Courses19" element={<Courses22 />}></Route>
-      <Route path="/Courses/Courses18" element={<Courses22 />}></Route>
-      <Route path="/Courses/Courses17" element={<Courses22 />}></Route>
       <Route path="/About" element={<About />}></Route>
       <Route path="/Shop" element={<Shop />} />
       <Route path="/" element={<MyDashboard />} />
@@ -85,6 +81,7 @@ function App() {
       </Routes>
       {/* <Sidebar /> */}
       <Footer/>
+     
 </Router>  
   )}
 

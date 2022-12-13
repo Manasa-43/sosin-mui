@@ -26,14 +26,14 @@ export default function About(){
             align="justify"
           >
             <p>
-              Us Sosin Classes (Formerly Known as Target IAS) is a dream project
+              Sosin Classes (Formerly Known as Target IAS) is a dream project
               of our Founder Director Mrs. Sosin Thayyaba Revella. With a varied
               experience as a field Anthropologist and as a renowned Faculty in
               Anthropology, Mrs. Sosin has been guiding the civil services
               aspirants to achieve their dreams. Sosin Classes began its journey
               as an Offline Coaching Institute, now functioning as Online
               Training Institute, providing Online Coaching for UPSC Civil
-              Services Examinination, UGC NET, and State Public Service
+              Services Examination, UGC NET, and State Public Service
               Commissions Exams. Sosin Classes established itself as the Best
               Civil Services Coaching Institute in Hyderabad with special
               credentials of Best Training Institute for ANTHROPOLOGY for Civil
