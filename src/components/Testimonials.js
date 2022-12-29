@@ -42,7 +42,7 @@ const TestArr = [
 export default function Testimonial() {
     const [currentCourse, setCurrentCourse] = React.useState(TestArr[0]);
   return (
-    <Grid sx={{mx:'3rem'}}>
+    <Grid sx={{mx:'4rem'}}>
       <Carousel data={currentCourse}/>
     </Grid>
   );

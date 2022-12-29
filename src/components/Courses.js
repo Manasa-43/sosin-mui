@@ -7,37 +7,48 @@ import CardMedia from "@mui/material/CardMedia";
 import { CardActionArea } from "@mui/material";
 import Cardimg from "../assets/Card img.png";
 import Paper from "@mui/material/Paper";
-import { Link } from "react-router-dom";
-
+import { Link, Outlet, useParams } from "react-router-dom";
+// import { Courses22 } from "./Courses22";
 export default function Courses() {
+// const {id} = useParams();
 
+// const {courseId, setCourseId} = React.useState()
+// console.log(courseId)
   const courseArray = [
     {
       img: Cardimg,
       name: " UPSC Anthropology Coaching: Dec 2022 Foundation Batch",
-      path : "/Courses/Courses22"
+      path : "/Courses/Courses22",
+      label:1
+      // path: `/Courses/${id}`
     },
     {
       img: Cardimg,
       name: " UPSC Anthropology Coaching: Dec 2021 Foundation Batch",
-      path : "/Courses/Courses21"
+      path : "/Courses/Courses21",
+      label:2
+      // path : `/Courses/${id}`
 
     },
     {
       img: Cardimg,
       name: " UPSC Anthropology Coaching: Dec 2020 Foundation Batch",
+      label:3
     },
     {
       img: Cardimg,
       name: " UPSC Anthropology Coaching: Dec 2019 Foundation Batch",
+      label:4
     },
     {
       img: Cardimg,
       name: " UPSC Anthropology Coaching: Dec 2018 Foundation Batch",
+      label:5
     },
     {
       img: Cardimg,
       name: " UPSC Anthropology Coaching: Dec 2017 Foundation Batch",
+      label:6
     },
   ];
 
@@ -45,12 +56,12 @@ export default function Courses() {
 
   return (
     <Box sx={{pt: "3rem", mb: "6rem", px:'2rem'}}>
-      <Typography
+      <Box
         sx={{ fontWeight: "500", fontSize: "2rem", pb: "2rem", px:'4rem' }}
-        variant="h2"
+       
       >
-        All Courses
-      </Typography>
+        <h2>All Courses</h2>
+      </Box>
       <Grid
         container
         rowSpacing={6}
@@ -84,9 +95,11 @@ export default function Courses() {
             </Grid>
           ))
         ) : (
-          <Typography sx={{ px: "2rem" }}>No courses available</Typography>
+          <Box sx={{ px: "2rem" }}><h2>No courses available</h2></Box>
         )}
       </Grid>
+     
     </Box>
+    
   );
 }

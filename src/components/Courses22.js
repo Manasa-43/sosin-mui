@@ -9,19 +9,8 @@ import { CardActionArea } from "@mui/material";
 import Cardimg from "../assets/Card img.png";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
-
-import { useTheme } from "@mui/material/styles";
-import MobileStepper from "@mui/material/MobileStepper";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Carousel from "./Carousel";
-// import { set } from "react-hook-form";
-
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
 const allCourses = [
   {
     name: "Anthropology",
@@ -65,23 +54,56 @@ const allCourses = [
   },
 ];
 
+// const courseArray = [
+//   {courseID : 1,
+//    courseDetails:[
+//     {
+//       name: "Anthropology Online Classes: Dec 2022 Foundation Batch 1",
+//       price: 45000,
+//       overview: 'Program Overview 1'
+//     }
+//    ]
+// },
+// {courseID : 2,
+//   courseDetails:[
+//    {
+//      name: "Anthropology Online Classes: Dec 2022 Foundation Batch 2",
+//      price: 38000,
+//      overview: 'Program Overview 2'
+//    }
+//   ]
+// },
+// {courseID : 3,
+//   courseDetails:[
+//    {
+//      name: "Anthropology Online Classes: Dec 2022 Foundation Batch 3",
+//      price: 27000,
+//      overview: 'Program Overview 3'
+//    }
+//   ]
+// }
+// ]
 
 
-function Courses22() {
+function Courses22(props) {
+  // const {id} = useParams()
   const [currentCourse, setCurrentCourse] = React.useState(allCourses[0]);
   return (
     <Box sx={{ px: "4rem" }}>
-      <Typography
-        variant="h4"
+      <Box
+        // variant="h4"
         sx={{
           fontsize: "2.5rem",
           textAlign: "center",
           fontWeight: "700",
           my: "2rem",
+          textAlign:'center'
         }}
       >
-        Anthropology Online Classes: Dec 2022 Foundation Batch
-      </Typography>
+        {/* {console.log(courseArray[props.courseId])} */}
+       {/* <h2>{courseArray[{id}].courseDetails[0].name}</h2>  */}
+       <h2>UPSC Anthropology Coaching: Dec 2022 Foundation Batch</h2>
+      </Box>
       <Grid
         container
         rowSpacing={4}
@@ -148,14 +170,14 @@ function Courses22() {
         </Grid>
       </Grid>
       <Box sx={{ fontSize: "2rem", fontWeight: 500, my: "2rem" }}>
-        Program Overview
+       <h3> Program Overview</h3>
       </Box>
-      <Box sx={{ fontSize: "2rem", fontWeight: 500, my: "2rem" }}>Features</Box>
+      <Box sx={{ fontSize: "2rem", fontWeight: 500, my: "2rem" }}><h3>Features</h3></Box>
       <Grid align="center">
         <Grid>
-          <Typography sx={{ fontSize: "2rem", fontWeight: 500, my: "2rem" }}>
-            Related Courses
-          </Typography>
+          <Box sx={{ fontSize: "2rem", fontWeight: 500, my: "2rem" }}>
+            <h1>Related Courses</h1>
+          </Box>
         </Grid>
       </Grid>
       <Box display="flex" justifyContent="center" sx={{ my: "3rem" }}>

@@ -56,7 +56,6 @@ const linkImages = [
     linkPath: "https://www.youtube.com/embed/fHd_ttfBg5U",
     title: "Motivational Video free stock video HD",
   },
-  
 ];
 const allCourses = [
   {
@@ -101,9 +100,7 @@ const allCourses = [
   },
 ];
 
-
-
- function TestSeries() {
+function TestSeries() {
   const [currentCourse, setCurrentCourse] = React.useState(allCourses[0]);
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -124,7 +121,6 @@ const allCourses = [
   return (
     <Box>
       <Grid container px="4rem" py={4}>
-        
         {/* <CarouselContent /> */}
 
         <Grid
@@ -176,46 +172,31 @@ const allCourses = [
                   size="small"
                   onClick={handleNext}
                   disabled={activeStep === maxSteps - 1}
-                >
-                  {/* Next
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )} */}
-                </Button>
+                ></Button>
               }
               backButton={
                 <Button
                   size="small"
                   onClick={handleBack}
                   disabled={activeStep === 0}
-                >
-                  {/* {theme.direction === 'rtl' ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-            Back */}
-                </Button>
+                ></Button>
               }
             />
           </Box>
         </Grid>
       </Grid>
-      <Box  sx={{ px: "5rem" }}>
-        <Typography
+      <Box sx={{ px: "5rem" }}>
+        <Box
           sx={{
             fontWeight: "bold",
-            fontSize: "2rem",
+            // fontSize: "5rem",
             pb: "2rem",
             textAlign: "center",
             color: "rgb(84, 82, 82)",
           }}
-          variant="h2"
         >
-          India’s Most Respected And Trusted Faculty For Anthropology
-        </Typography>
+          <h2>India’s Most Respected And Trusted Faculty For Anthropology</h2>
+        </Box>
         <Grid
           container
           display="flex"
@@ -224,124 +205,156 @@ const allCourses = [
           // sx={{ px: "5rem" }}
         >
           {linkImages.map((arr) => (
-            <Grid key ={arr.id} item xs={12} sm={6} md={6}>
-              <Card>
+            <Grid key={arr.id} item xs={12} sm={6} md={6} width="100%">
+              <Box>
                 <CardMedia
+                  sx={{ objectFit: "contain" }}
                   component="iframe"
                   height="360"
-                  width="640"
+                  // width="640"
+                  width="100%"
                   src={arr.linkPath}
                   title={arr.title}
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allowFullScreen"
                 ></CardMedia>
-              </Card>
+              </Box>
             </Grid>
           ))}
         </Grid>
-        <Grid sx={{ px: "2rem", my: "4rem" }} align="center">
-          <Card elevation={3} sx={{ maxWidth: 450 }}>
-            <CardMedia
-              component="img"
-              height="300"
-              src={require("../assets/bookStatic-img.jpg")}
-              // sx={{position:'relative'}}
-            ></CardMedia>
-          </Card>
-          <Button
-            variant="contained"
-            sx={{
-              bgcolor: "#ED7633",
-              "&:hover": { bgcolor: "#ED7633" },
-              py: "0.5rem",
-              px: "2.5rem",
-              borderRadius: 2,
-              fontWeight: "bold",
-              fontSize: "1rem",
-            }}
-          >
-            Buy Now
-          </Button>
-        </Grid>
-        <Grid align="center">     
-          <Typography sx={{ fontSize: "2rem", fontWeight: 500, my: "2rem" }}>
-           Explore Your Courses
-          </Typography>
-        </Grid>
-        <Grid
-              display="flex"
-              justifyContent="center"
-              sx={{ mb: "2rem", mx: "1rem" }}
+        <Grid>
+          <Grid sx={{ my: "4rem" }} align="center" width="100%">
+            <Box>
+              <CardMedia
+                component="img"
+                height="300"
+                src="https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/books-every-aspiring-ceo-should-read.jpg?width=595&amp;height=400&amp;name=books-every-aspiring-ceo-should-read.jpg"
+                sx={{
+                  height: "100%",
+                  display: "block",
+                  maxWidth: 400,
+                  overflow: "hidden",
+                  width: "100%",
+                }}
+              />
+            </Box>
+          </Grid>
+          <Box align="center">
+            <Button
+              variant="contained"
+              sx={{
+                bgcolor: "#ED7633",
+                "&:hover": { bgcolor: "#ED7633" },
+                py: "0.5rem",
+                px: "2.5rem",
+                borderRadius: 2,
+                fontWeight: "bold",
+                fontSize: "1rem",
+              }}
             >
-              {allCourses.map((item) => (
-                <Box>
-                  {item.name === currentCourse.name ? (
-                    <Button
-                      onClick={() => setCurrentCourse(item)}
-                      sx={{
-                        bgcolor: "#ED7633",
-                        variant: "contained",
-                        color: "white",
-                        "&:hover": { bgcolor: "#ED7633" },
-                        py: "0.5rem",
-                        px: "1.5rem",
-                        borderRadius: "2rem",
-                        fontWeight: "bold",
-                        fontSize: "0.75rem",
-                        width: "100%",
-                        whiteSpace: "nowrap",
+              Buy Now
+            </Button>
+          </Box>
+        </Grid>
 
-                        // mx:'1rem'
-                      }}
-                    >
-                      {item.name}
-                    </Button>
-                  ) : (
-                    <Button
-                      onClick={() => setCurrentCourse(item)}
-                      sx={{
-                        // bgcolor: "#ED7633",
-                        color: "rgba(59, 59, 59, 0.68)",
-                        // "&:hover": { bgcolor: "#ED7633" },
-                        py: "0.5rem",
-                        px: "1.5rem",
-                        borderRadius: "2rem",
-                        fontWeight: "bold",
-                        fontSize: "0.75rem",
-                        width: "100%",
-                        whiteSpace: "nowrap",
+        <Grid
+          align="center"
+          sx={{ fontSize: "2rem", fontWeight: 500, my: "2rem" }}
+        >
+          <h1>Explore Your Courses</h1>
+        </Grid>
+        <Box display="flex" justifyContent="center" sx={{ my: "3rem" }}>
+          <Box>
+            <Box>
+              <Grid
+                display="flex"
+                justifyContent="center"
+                sx={{ mb: "2rem", mx: "1rem" }}
+              >
+                {allCourses.map((item) => (
+                  <Box>
+                    {item.name === currentCourse.name ? (
+                      <Button
+                        onClick={() => setCurrentCourse(item)}
+                        sx={{
+                          bgcolor: "#ED7633",
+                          variant: "contained",
+                          color: "white",
+                          "&:hover": { bgcolor: "#ED7633" },
+                          py: "0.5rem",
+                          px: "1.5rem",
+                          borderRadius: "2rem",
+                          fontWeight: "bold",
+                          fontSize: "0.75rem",
+                          width: "100%",
+                          whiteSpace: "nowrap",
 
-                        // mx:'1rem'
-                      }}
-                    >
-                      {item.name}
-                    </Button>
-                  )}
-                </Box>
-              ))}
-            </Grid>
-        <Carousel data={currentCourse}/>
+                          // mx:'1rem'
+                        }}
+                      >
+                        {item.name}
+                      </Button>
+                    ) : (
+                      <Button
+                        onClick={() => setCurrentCourse(item)}
+                        sx={{
+                          // bgcolor: "#ED7633",
+                          color: "rgba(59, 59, 59, 0.68)",
+                          // "&:hover": { bgcolor: "#ED7633" },
+                          py: "0.5rem",
+                          px: "1.5rem",
+                          borderRadius: "2rem",
+                          fontWeight: "bold",
+                          fontSize: "0.75rem",
+                          width: "100%",
+                          whiteSpace: "nowrap",
+                          // mx:'1rem'
+                        }}
+                      >
+                        {item.name}
+                      </Button>
+                    )}
+                  </Box>
+                ))}
+              </Grid>
+              <Carousel data={currentCourse} />
+            </Box>
+          </Box>
+        </Box>
       </Box>
-      <Grid sx={{backgroundColor:"rgba(237,118,51,.06)",pt:'2rem',mb:'2rem'}}>
-      <Typography
+      <Grid
+        sx={{ pt: "2rem", mb: "2rem", backgroundColor: "rgba(237,118,51,.06)" }}
+      >
+        <Box
           sx={{
             fontWeight: "bold",
-            fontSize: "2rem",
+            // fontSize: "1rem",
             py: "2rem",
             textAlign: "center",
             color: "rgb(84, 82, 82)",
-            px:'4rem'
+            px: "4rem",
           }}
-          variant="h1"
+          // variant="h1"
         >
-         Two decades of consistent success – Student Testimonials
-        </Typography>
-        {/* <Box sx={{px:'2rem',zIndex:1}}> 
-          <Carousel data={currentCourse} />
-        </Box> */}
+          <h1>Two decades of consistent success – Student Testimonials</h1>
+        </Box>
+        <Box>
           <Testimonial />
+        </Box>
+      </Grid>
+      <Grid container sx={{ pb: "2rem" }} display="flex" justifyContent="center">
+        <Grid sx={{ fontWeight: "bold", py: "2rem", textAlign: "center" ,px:'2rem'}}>
+          <h1>Our Media Presence</h1>
+        </Grid>
+        <Grid sx={{ border: 2 }}>
+          <CardMedia
+            component="img"
+            src={require("../assets/testimonial-static.png")}
+            sx={{ height: "150px", width: "150px" }}
+          />
+        </Grid>
       </Grid>
     </Box>
   );
 }
-export {TestSeries} ;
+export { TestSeries };
